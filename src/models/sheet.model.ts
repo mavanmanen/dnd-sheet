@@ -196,18 +196,7 @@ export class Sheet {
         const armor = ArmorTypes.ArmorTypeNameMap.get(this.armor)!
         const dexMod = this.abilityScores.find((x: AbilityScore) => x.name == AbilityNames.Dexterity)!.modifier
 
-        let value = armor.ac + (this.shield ? 2 : 0)
-
-        switch (armor.armorClass) {
-            case ArmorClasses.Light:
-                value += dexMod
-
-            case ArmorClasses.Medium:
-                value += Math.min(dexMod, 2)
-                break
-        }
-
-        return value
+        return armor.ac + dexMod + (this.shield ? 2 : 0)
     }
 
     public addEquipmentItem() {

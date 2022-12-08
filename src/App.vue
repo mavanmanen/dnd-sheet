@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUpdated, ref, resolveTransitionHooks } from 'vue'
+import { onMounted, onUpdated, ref } from 'vue'
 import { AbilityNames, Sheet, SkillNames, ArmorTypes } from './models'
 import '@/extensions'
 import type { Note } from './models/note.model';
